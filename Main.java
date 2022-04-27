@@ -63,7 +63,7 @@ public class NewJFrame extends javax.swing.JFrame {
     String returnEmail,returnFName,returnLName,returnJName,returnPassword,returnReason;
 
     //REMOVE
-    String removeFName,removeLName,removePhoneNbr;
+    String removeFName,removeLName,removePhoneNbr,removePassword;
 
     String selectedTeam;
     String jerseySize;
@@ -190,15 +190,12 @@ public class NewJFrame extends javax.swing.JFrame {
         InventorySubmitButton = new javax.swing.JButton();
         RemoveTab = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        RemoveFName = new javax.swing.JTextField();
-        RemoveLName = new javax.swing.JTextField();
         RemoveEmail = new javax.swing.JTextField();
         removeUserButton = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        RemovePhoneNumber = new javax.swing.JTextField();
+        removePasswordLabel = new javax.swing.JLabel();
+        removeUserPassword = new javax.swing.JTextField();
+        removeDisplayBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -387,27 +384,26 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginTabLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SignInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(217, 217, 217))))))
+                                .addGap(216, 216, 216))))))
         );
         LoginTabLayout.setVerticalGroup(
             LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginTabLayout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(LoginTabLayout.createSequentialGroup()
-                        .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CreateFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SignInEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CreateLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SignInPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(CreatePhoneNbr, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CreateFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SignInEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CreateLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SignInPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(LoginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CreatePhoneNbr, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SignInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(CreateEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1214,18 +1210,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabel24.setText("Removing User");
 
-        RemoveFName.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RemoveFNameMouseExited(evt);
-            }
-        });
-
-        RemoveLName.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RemoveLNameMouseExited(evt);
-            }
-        });
-
         RemoveEmail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 RemoveEmailMouseExited(evt);
@@ -1247,18 +1231,17 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel36.setText("Email");
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel37.setText("First name");
+        removePasswordLabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        removePasswordLabel.setText("Password");
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel38.setText("Last name");
-
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel39.setText("Phone Number");
-
-        RemovePhoneNumber.addMouseListener(new java.awt.event.MouseAdapter() {
+        removeUserPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                RemovePhoneNumberMouseExited(evt);
+                removeUserPasswordMouseExited(evt);
+            }
+        });
+        removeUserPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeUserPasswordActionPerformed(evt);
             }
         });
 
@@ -1269,30 +1252,23 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(RemoveTabLayout.createSequentialGroup()
                 .addGroup(RemoveTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RemoveTabLayout.createSequentialGroup()
-                        .addGap(401, 401, 401)
-                        .addGroup(RemoveTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RemoveLName, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RemoveFName, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RemoveEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RemovePhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(RemoveTabLayout.createSequentialGroup()
-                        .addGap(442, 442, 442)
-                        .addComponent(jLabel38))
-                    .addGroup(RemoveTabLayout.createSequentialGroup()
-                        .addGap(460, 460, 460)
-                        .addComponent(jLabel36))
-                    .addGroup(RemoveTabLayout.createSequentialGroup()
-                        .addGap(419, 419, 419)
-                        .addComponent(jLabel39))
-                    .addGroup(RemoveTabLayout.createSequentialGroup()
-                        .addGap(449, 449, 449)
-                        .addComponent(removeUserButton))
-                    .addGroup(RemoveTabLayout.createSequentialGroup()
                         .addGap(361, 361, 361)
                         .addComponent(jLabel24))
                     .addGroup(RemoveTabLayout.createSequentialGroup()
-                        .addGap(442, 442, 442)
-                        .addComponent(jLabel37)))
+                        .addGap(394, 394, 394)
+                        .addGroup(RemoveTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(RemoveEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(removeUserPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addGroup(RemoveTabLayout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel36))
+                            .addGroup(RemoveTabLayout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(removeUserButton))
+                            .addGroup(RemoveTabLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(removePasswordLabel))
+                            .addComponent(removeDisplayBox))))
                 .addContainerGap(512, Short.MAX_VALUE))
         );
         RemoveTabLayout.setVerticalGroup(
@@ -1300,25 +1276,19 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(RemoveTabLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RemoveFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel38)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RemoveLName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(95, 95, 95)
                 .addComponent(jLabel36)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(RemoveEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel39)
+                .addComponent(removePasswordLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RemovePhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(removeUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(removeUserButton)
-                .addGap(47, 47, 47))
+                .addGap(34, 34, 34)
+                .addComponent(removeDisplayBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Remove User", RemoveTab);
@@ -1965,25 +1935,15 @@ public class NewJFrame extends javax.swing.JFrame {
         
     }                                             
 
-    private void RemoveFNameMouseExited(java.awt.event.MouseEvent evt) {                                        
-        // TODO add your handling code here:
-        removeFirstname = RemoveFName.getText();     
-    }                                       
-
-    private void RemoveLNameMouseExited(java.awt.event.MouseEvent evt) {                                        
-        // TODO add your handling code here:
-        removeLastname = RemoveLName.getText();
-    }                                       
-
     private void RemoveEmailMouseExited(java.awt.event.MouseEvent evt) {                                        
         // TODO add your handling code here:
         removeEmail = RemoveEmail.getText();
     }                                       
 
-    private void RemovePhoneNumberMouseExited(java.awt.event.MouseEvent evt) {                                              
+    private void removeUserPasswordMouseExited(java.awt.event.MouseEvent evt) {                                               
         // TODO add your handling code here:
-        removeNum = RemovePhoneNumber.getText();
-    }                                             
+        removeNum = removeUserPassword.getText();
+    }                                              
 
     private void PurchaseOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
@@ -2134,90 +2094,165 @@ public class NewJFrame extends javax.swing.JFrame {
     }                                            
 
     private void removeUserButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        List userEmails = new ArrayList();
+        List passwords = new ArrayList();
+        Integer x = null;
+        
+        //GetUserDetails
         removeEmail=RemoveEmail.getText();
+        removeEmail.trim();
+        
+        removePassword = removeUserPassword.getText();
+        //userPassword = SignInPassword.get
+        //userPassword.trim();
+
+        String sqlCheckForUser = "SELECT * FROM Accounts";
+        
+        try {
+           //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+        } catch (ClassNotFoundException cnfex) {
+            System.out.println("Problem in loading or "
+                    + "registering MS Access JDBC driver");
+            cnfex.printStackTrace();
+        }
+        
+        try{ //add  new user
+            connection = DriverManager.getConnection(dbURL);
+            statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sqlCheckForUser);
+            
+                while (rs.next())
+                {
+                    String emails = rs.getString("Email");
+                    String password = rs.getString("Password");
+       
+                     userEmails.add(emails);
+                    passwords.add(password);
+
+
+                    if(userEmails.contains(removeEmail)) 
+                      {
+                            Integer NameIndex = userEmails.indexOf(removeEmail);
+                            //System.out.println ("USERNAME: "+userNames.get(NameIndex));
+
+                            Integer PasswordIndex = passwords.indexOf(removePassword);
+                            //System.out.println ("PASSWORD: "+passwords.get(PasswordIndex));
+
+                            // if password matches same index as username entered then login
+                        if (( PasswordIndex == NameIndex))
+                        {
+
+                                //START OF DELETE USER FROM purchase table
+                            String removePurchaseSql = "DELETE * FROM Purchase WHERE Email = " +'"'+ removeEmail+'"';
+                            try { //
+                                 //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+                                Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+                            } catch (ClassNotFoundException cnfex) {
+                                System.out.println("Problem in loading or "
+                                          + "registering MS Access JDBC driver");
+                                  cnfex.printStackTrace();
+                              }
+
+
+                            try{ //delete user from purchase
+                                connection = DriverManager.getConnection(dbURL);
+                                statement = connection.createStatement();
+                                statement.executeUpdate(removePurchaseSql);
+
+                            } catch (SQLException sqlex) {
+                                  System.err.println("SQL statement issue " + sqlex.getMessage());
+                            }
+                            //END OF DELETE USER FROM purchase table
+
+                            //START OF DELETE USER FROM Rent table
+                            String removeRentSql = "DELETE * FROM Rent WHERE Email = " +'"'+ removeEmail+'"';
+                            try { //
+                                 //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+                                Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+                            } catch (ClassNotFoundException cnfex) {
+                                System.out.println("Problem in loading or "
+                                          + "registering MS Access JDBC driver");
+                                  cnfex.printStackTrace();
+                              }
+
+
+                            try{ //delete user from purchase
+                                connection = DriverManager.getConnection(dbURL);
+                                statement = connection.createStatement();
+                                statement.executeUpdate(removeRentSql);
+
+                            } catch (SQLException sqlex) {
+                                  System.err.println("SQL statement issue " + sqlex.getMessage());
+                            }
+                            //END OF DELETE USER FROM rent table
+
+                            //START OF DELETE USER FROM Accounts table
+                            //
+                            String removeAccountsSql = "DELETE * FROM Accounts WHERE Email = " +'"'+ removeEmail+'"';
+
+                            try { //
+                                 //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+                                Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+                            } catch (ClassNotFoundException cnfex) {
+                                System.out.println("Problem in loading or "
+                                          + "registering MS Access JDBC driver");
+                                  cnfex.printStackTrace();
+                              }
+
+
+                              try{ //delete user from account
+                                  connection = DriverManager.getConnection(dbURL);
+                                  statement = connection.createStatement();
+                                  statement.executeUpdate(removeAccountsSql);
+
+                              } catch (SQLException sqlex) {
+                                  System.err.println("SQL statement issue " + sqlex.getMessage());
+                              }
+                              //END OF DELETE USER FROM rent
+                                //System.out.println ("YOU ARE NOW LOGGED IN");
+                               removeDisplayBox.setText("USER Deleted");
+
+                        }
+
+                            else
+                            {
+                                //System.out.println ("INCORRECT LOGIN DETAILS");
+                                removeDisplayBox.setText("EMAIL AND PASSWORD DONT MATCH");
+                            }
+
+
+                      }
+                    else
+                    {
+                        System.out.println ("NO ACCOUNT FOR THIS EMAIL");
+                        removeDisplayBox.setText("NO ACCOUNT FOR THIS EMAIL");
+                    }
+                }
+            
+            
+            
+        } catch (SQLException sqlex) {
+            System.err.println("SQL statement issue " + sqlex.getMessage());
+        }
+
+// ######MAIN ###TODO add your handling code here:
+        //removeEmail=RemoveEmail.getText();
         System.out.printf("!!removeEmail  = "+removeEmail);//
+        System.out.printf("!!removeFName  = "+removeUserPassword);//
         
-        removeFName = RemoveFName.getText();
-        System.out.printf("!!removeFName  = "+removeFName);//
-        
-        removeLName = RemoveLName.getText();
-        System.out.printf("!!removeLName  = "+removeLName);//
-        
-        removePhoneNbr = RemovePhoneNumber.getText();
-        System.out.printf("!!removePhoneNbr  = "+removePhoneNbr);//
         
         //THE USER ACC CANNOT BE DELETED FROM ACCOUNTS UNTIL THE ACCOUNT ENTRIES ARE DELETED IN RENT/PURCHASE FIRST
-        
-        //START OF DELETE USER FROM purchase table
-        String removePurchaseSql = "DELETE * FROM Purchase WHERE Email = " +'"'+ removeEmail+'"';
-                try { //
-                     //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-                } catch (ClassNotFoundException cnfex) {
-                    System.out.println("Problem in loading or "
-                              + "registering MS Access JDBC driver");
-                      cnfex.printStackTrace();
-                  }
-
-
-                try{ //delete user from purchase
-                    connection = DriverManager.getConnection(dbURL);
-                    statement = connection.createStatement();
-                    statement.executeUpdate(removePurchaseSql);
-
-                } catch (SQLException sqlex) {
-                      System.err.println("SQL statement issue " + sqlex.getMessage());
-                }
-        //END OF DELETE USER FROM purchase table
-        
-         //START OF DELETE USER FROM Rent table
-        String removeRentSql = "DELETE * FROM Rent WHERE Email = " +'"'+ removeEmail+'"';
-                try { //
-                     //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-                } catch (ClassNotFoundException cnfex) {
-                    System.out.println("Problem in loading or "
-                              + "registering MS Access JDBC driver");
-                      cnfex.printStackTrace();
-                  }
-
-
-                try{ //delete user from purchase
-                    connection = DriverManager.getConnection(dbURL);
-                    statement = connection.createStatement();
-                    statement.executeUpdate(removeRentSql);
-
-                } catch (SQLException sqlex) {
-                      System.err.println("SQL statement issue " + sqlex.getMessage());
-                }
-        //END OF DELETE USER FROM rent table
-        
-        //START OF DELETE USER FROM Accounts table
-        //
-        String removeAccountsSql = "DELETE * FROM Accounts WHERE Email = " +'"'+ removeEmail+'"';
-        
-                try { //
-                     //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-                } catch (ClassNotFoundException cnfex) {
-                    System.out.println("Problem in loading or "
-                              + "registering MS Access JDBC driver");
-                      cnfex.printStackTrace();
-                  }
-
-
-                  try{ //delete user from account
-                      connection = DriverManager.getConnection(dbURL);
-                      statement = connection.createStatement();
-                      statement.executeUpdate(removeAccountsSql);
-
-                  } catch (SQLException sqlex) {
-                      System.err.println("SQL statement issue " + sqlex.getMessage());
-                  }
-                  //END OF DELETE USER FROM rent
+       
         
     }                                                
+
+    private void removeUserPasswordActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+    }                                                  
 
     /**
      * @param args the command line arguments
@@ -2279,9 +2314,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> PurchaseTeam;
     private javax.swing.JTextField PurchaseTotal;
     private javax.swing.JTextField RemoveEmail;
-    private javax.swing.JTextField RemoveFName;
-    private javax.swing.JTextField RemoveLName;
-    private javax.swing.JTextField RemovePhoneNumber;
     private javax.swing.JPanel RemoveTab;
     private javax.swing.JTextField RentFeedback;
     private javax.swing.JButton RentGetPriceButton;
@@ -2342,9 +2374,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2353,6 +2382,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField removeDisplayBox;
+    private javax.swing.JLabel removePasswordLabel;
     private javax.swing.JButton removeUserButton;
+    private javax.swing.JTextField removeUserPassword;
     // End of variables declaration                   
 }
